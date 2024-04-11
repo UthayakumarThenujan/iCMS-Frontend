@@ -1,28 +1,53 @@
-<div class="w-full h-[65px] items-center bg-white flex justify-between px-10 top-menu">
-  <div>
-    <p class="font-bold text-xl">
-      iCMS Dashboard
-    </p>
+<div class="main-container">
+  <div class="w-full h-[65px] items-center bg-white flex justify-between px-10 top-menu">
+    <div>
+      <p class="font-bold text-xl">
+        iCMS Dashboard
+      </p>
+    </div>
+    <div>
+      <p-button [rounded]="true" [text]="true" size="large" (click)="showNotifications()">
+        <i class="pi pi-bell" style="font-size: 1.5rem; color: black;"></i>
+        <span *ngIf="notificationCount > 0" class="notification-badge">{{ notificationCount }}</span>
+      </p-button>
+      <p-button [rounded]="true" [text]="true" size="large">
+        <i class="pi pi-user" style="font-size: 1.5rem; color: black;"></i>
+      </p-button>
+    </div>
   </div>
-  <div>
-<!--    <p-button [rounded]="true" [text]="true" size="large">-->
-<!--      <i class="pi pi-bell" style="font-size: 1.5rem; color: black;"></i>-->
-<!--    </p-button>-->
-<!--    <p-button [rounded]="true" [text]="true" size="large">-->
-<!--      <i class="pi pi-user" style="font-size: 1.5rem; color: black;"></i>-->
-<!--    </p-button>-->
-    <p-button [rounded]="true" [text]="true" size="large" >
-      <i class="pi pi-bell" style="font-size: 1.5rem; color: black;"></i>
-    </p-button>
-    <p-button [rounded]="true" [text]="true" size="large" routerLink="main-dashboard/profile">
-      <i class="pi pi-user" style="font-size: 1.5rem; color: black;"></i>
-    </p-button>
 
+  <div class="notification-container" *ngIf="viewNotifications">
+    <div class="notification-header">
+      <h2>Notifications</h2>
+      <div class="top-notification-actions">
+        <button class="top-button" (click)="fetchNotifications()" [ngClass]="{'active': Unread}">Unread</button>
+        <button class="top-button" (click)="ReadNotification()" [ngClass]="{'active': Read}">Read</button>
+      </div>
+    </div>
+    <div class="notification-list">
 
+      <div>
+        <div *ngIf="Read">
+        <div *ngFor="let notification of notifications; let i = index" class="notification-box">
+          <p style="color: black;">{{ notification.email }}</p>
+          <p>{{ notification.alert }}</p>
+          <div class="notification-actions">
+            <button class="action-button" (click)="markAsUnread(i)">Unread</button>
+          </div>
+        </div>
+      </div>
 
+      <div *ngIf="Unread">
+        <div *ngFor="let notification of notifications; let i = index" class="notification-box" >
+          <p style="color: black;">{{ notification.email }}</p>
+          <p>{{ notification.alert }}</p>
+          <div class="notification-actions">
+            <button class="action-button" (click)="markAsRead(i)" *ngIf="notificationCount>0">Read</button>
+          </div>
+        </div>
+        </div>
 
-
-
-
+      </div>
+    </div>
   </div>
 </div>

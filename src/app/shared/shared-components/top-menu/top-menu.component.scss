@@ -3,3 +3,92 @@
   left:0;
   border-bottom: 1px solid #E2E8F0;
 }
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set full height */
+}
+
+.notification-container {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrollbar if content exceeds container height */
+  padding-left:75%;
+  
+}
+
+.notification-list {
+  // max-height: 50vh; /* Set max height to half of the viewport height */
+  overflow-y: auto; /* Enable vertical scrollbar if content exceeds container height */
+  padding:10px;
+  border-radius: 25px;
+  background-color:#A5CAD2;
+  
+
+
+}
+
+.notification-box {
+  border: 1px solid rgb(86, 210, 140);
+  border-radius: 25px;
+  padding: 5px;
+  margin-bottom:5px;
+  background-color: white;
+  text-align: left;
+  transition: transform 0.2s ease; /* Add transition effect */
+  padding-bottom:1px;
+  color:red;
+}
+
+// .notification-box:hover {
+//   transform: translateY(-5px); /* Apply transformation on hover */
+// }
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 10px;
+  margin-left:75%;
+  padding-bottom:15px;
+}
+
+.action-button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #81aef8;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #84fc94;
+}
+
+
+.top-notification-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.top-button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+// .top-button:hover {
+//   background-color: #e0e0e0;
+// }
+
+.active {
+  background-color: #11eb9f; /* Change background color to gray */
+  color: #000; /* Change text color to black */
+  /* Add any other styles you want to apply to the active button */
+}
