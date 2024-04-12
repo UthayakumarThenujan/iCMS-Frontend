@@ -12,6 +12,12 @@ import { UserNotificationComponent } from './components/user-profile/user-notifi
 import { UserSecurityComponent } from './components/user-profile/user-security/user-security.component';
 import {TabViewModule} from "primeng/tabview";
 import {SharedModule} from "../shared/shared.module";
+import {ButtonModule} from "primeng/button";
+import {ImageModule} from "primeng/image";
+import {FormsModule} from "@angular/forms";
+import {InputTextModule} from "primeng/inputtext";
+import {InputSwitchModule} from "primeng/inputswitch";
+import {PasswordModule} from "primeng/password";
 
 
 
@@ -31,7 +37,13 @@ import {SharedModule} from "../shared/shared.module";
     MainDashboardRoutingModule,
     ChartModule,
     TabViewModule,
-    SharedModule
+    SharedModule,
+    ButtonModule,
+    ImageModule,
+    FormsModule,
+    InputTextModule,
+    InputSwitchModule,
+    PasswordModule
   ]
 })
 export class MainDashboardModule { }

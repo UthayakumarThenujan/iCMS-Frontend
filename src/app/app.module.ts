@@ -32,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     DividerModule,
     SharedModule,
     HttpClientModule
+
+// >>>>>>> 12a2db002f877163df6cc6919f165c9e3aa82fc3
   ],
   providers: [],
   bootstrap: [AppComponent],
