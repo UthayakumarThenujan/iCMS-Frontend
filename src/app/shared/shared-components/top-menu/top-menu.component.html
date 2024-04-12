@@ -16,6 +16,9 @@
     </div>
   </div>
 
+
+  <!-- Notification start -->
+
   <div class="notification-container" *ngIf="viewNotifications">
     <div class="notification-header">
       <h2>Notifications</h2>
@@ -29,20 +32,22 @@
       <div>
         <div *ngIf="Read">
         <div *ngFor="let notification of notifications; let i = index" class="notification-box">
-          <p style="color: black;">{{ notification.email }}</p>
+          <p style="color: black; text-align: left; font-size:10px;">{{ notification.email }}</p>
           <p>{{ notification.alert }}</p>
-          <div class="notification-actions">
-            <button class="action-button" (click)="markAsUnread(i)">Unread</button>
+          <div class="notification-actions" *ngIf="UnreadCount>0 && ReadCount>0" style="margin-left:40%;">
+            <button class="action-button" (click)="markAsUnread(i)" >Unread</button>
+            <p style="color: black; text-align: right;font-size:10px;">{{ notification.created_at }}</p>
           </div>
         </div>
       </div>
 
       <div *ngIf="Unread">
         <div *ngFor="let notification of notifications; let i = index" class="notification-box" >
-          <p style="color: black;">{{ notification.email }}</p>
+          <p style="color: black; text-align: left; font-size:10px;">{{ notification.email }}</p>
           <p>{{ notification.alert }}</p>
-          <div class="notification-actions">
-            <button class="action-button" (click)="markAsRead(i)" *ngIf="notificationCount>0">Read</button>
+          <div class="notification-actions" *ngIf="notificationCount>0" style="margin-left:45%;">
+            <button class="action-button" (click)="markAsRead(i)">Read</button>
+            <p style="color: black; text-align: right; font-size:10px;">{{ notification.created_at }}</p>
           </div>
         </div>
         </div>
@@ -50,4 +55,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Notification end -->
+
+
+
+
+
+
 </div>
+
+

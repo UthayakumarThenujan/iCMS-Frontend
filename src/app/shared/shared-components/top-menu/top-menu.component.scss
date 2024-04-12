@@ -3,6 +3,9 @@
   left:0;
   border-bottom: 1px solid #E2E8F0;
 }
+
+//---------------------Notification bell css start----------------------------------------------------
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -13,6 +16,8 @@
   flex: 1;
   overflow-y: auto; /* Enable vertical scrollbar if content exceeds container height */
   padding-left:75%;
+  padding-right:20px;
+  
   
 }
 
@@ -22,6 +27,7 @@
   padding:10px;
   border-radius: 25px;
   background-color:#A5CAD2;
+  height:590px;
   
 
 
@@ -30,13 +36,16 @@
 .notification-box {
   border: 1px solid rgb(86, 210, 140);
   border-radius: 25px;
-  padding: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
   margin-bottom:5px;
   background-color: white;
   text-align: left;
   transition: transform 0.2s ease; /* Add transition effect */
   padding-bottom:1px;
   color:red;
+  height:130px;
 }
 
 // .notification-box:hover {
@@ -88,7 +97,9 @@
 // }
 
 .active {
-  background-color: #11eb9f; /* Change background color to gray */
-  color: #000; /* Change text color to black */
-  /* Add any other styles you want to apply to the active button */
+  background-color: #11eb9f; 
+  color: #000; 
 }
+
+
+//---------------------Notification bell css end----------------------------------------------------
